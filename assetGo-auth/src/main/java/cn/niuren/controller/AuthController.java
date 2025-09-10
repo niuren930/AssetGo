@@ -1,12 +1,14 @@
 package cn.niuren.controller;
 
+import cn.niuren.params.RegisterParams;
 import cn.niuren.vo.Result;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- *
  * @author: niuRen
  * @time: 2025-09-08 14:11
  */
@@ -21,12 +23,22 @@ public class AuthController {
     }
 
     // todo 注册
-    public Result register() {
+    @PostMapping("/register")
+    public Result register(@RequestBody RegisterParams registerParam) {
+
+        // 校验验证码
+        // 根据手机号查询缓存中的验证码是否和获取的一致
+
+        //  注册
+
         return Result.success("登录成功");
     }
 
     // todo 发送验证码
-    public Result sendCheckCode() {
+    public Result sendCheckCode(String telephone) {
+
+        // 发送验证码，并依据手机号存入缓存
+
         return Result.success("登录成功");
     }
 
