@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: assetGo-cache
+  data:
+    # Redis配置
+    redis:
+      host: 192.168.1.100
+      port: 6379
+#      password: <PASSWORD>
+      database: 10
+    redisson:
+      file: classpath:redisson-config.yml
+

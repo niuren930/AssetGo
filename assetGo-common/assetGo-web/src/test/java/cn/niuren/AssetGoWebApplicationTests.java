@@ -1,10 +1,10 @@
-package cn.niuren.assetgocommon;
+package cn.niuren;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AssetGoCommonApplicationTests {
+class AssetGoWebApplicationTests {
 
     @Test
     void contextLoads() {

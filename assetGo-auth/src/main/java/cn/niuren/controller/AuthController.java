@@ -1,8 +1,11 @@
 package cn.niuren.controller;
 
+import cn.niuren.limiter.WindowRateLimiter;
 import cn.niuren.params.RegisterParams;
+import cn.niuren.service.notice.NoticeService;
 import cn.niuren.vo.Result;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
+
+    @Autowired
+    private NoticeService noticeService;
 
     // todo 登录
     public Result login() {
@@ -37,9 +43,9 @@ public class AuthController {
     // todo 发送验证码
     public Result sendCheckCode(String telephone) {
 
-        // 发送验证码，并依据手机号存入缓存
+        noticeService.generateCaptchaAndSendNotice(telephone);
 
-        return Result.success("登录成功");
+        return Result.success("发送成功");
     }
 
 }

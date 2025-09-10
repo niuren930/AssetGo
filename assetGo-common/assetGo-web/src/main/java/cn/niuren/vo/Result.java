@@ -1,14 +1,10 @@
 package cn.niuren.vo;
 
-import org.apache.commons.lang3.StringUtils;
-
 import java.util.HashMap;
 import java.util.Objects;
 
 /**
  * 操作消息提醒
- *
- * @author ruoyi
  */
 public class Result extends HashMap<String, Object> {
     private static final long serialVersionUID = 1L;
